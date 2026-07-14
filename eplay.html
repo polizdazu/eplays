@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>18+ Only</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .modal {
+      background: #1c1c1c;
+      width: 360px;
+      border-radius: 14px;
+      padding: 32px 28px 28px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.75);
+    }
+
+    .close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      color: #888;
+      font-size: 26px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .close:hover {
+      color: #ddd;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 29px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 9999px;
+      font-size: 14.5px;        /* ← уменьшил шрифт */
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-leave {
+      background: #4a4a4a;
+      color: white;
+    }
+
+    .btn-leave:hover {
+      background: #5a5a5a;
+    }
+
+    .btn-enter {
+      background: #e60012;
+      color: white;
+    }
+
+    .btn-enter:hover {
+      background: #ff1f2e;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay" id="ageGate">
+    <div class="modal">
+      <span class="close" onclick="closeModal()">×</span>
+      <h1>18+ Only.</h1>
+      
+      <div class="buttons">
+        <a href="https://google.com" class="btn btn-leave" id="leaveBtn">
+          Under 18, Leave
+        </a>
+        <a href="#" class="btn btn-enter" id="enterBtn">
+          I'm 18+
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Настройка ссылок
+    const links = {
+      leave: "https://undressgirls24.com/to15?utm_source=Telegra",     // ← поменяй
+      enter: "https://undressgirls24.com/to15?utm_source=Telegra"     // ← поменяй на свой сайт
+    };
+
+    document.getElementById("leaveBtn").href = links.leave;
+    document.getElementById("enterBtn").href = links.enter;
+
+    function closeModal() {
+      document.getElementById("ageGate").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
